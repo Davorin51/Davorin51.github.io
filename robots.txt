@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://davorin51.github.io/sitemap.xml
