@@ -1,0 +1,14 @@
+{
+  "name": "davorin-portfolio-checks",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Development-only checks for the buildless GitHub Pages portfolio",
+  "scripts": {
+    "check": "node --check script.js",
+    "test": "playwright test"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.13.0",
+    "@playwright/test": "1.64.0"
+  }
+}

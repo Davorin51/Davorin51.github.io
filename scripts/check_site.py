@@ -36,6 +36,8 @@ class SiteParser(HTMLParser):
             self.meta[attrs.get("name", attrs.get("property", ""))] = attrs.get("content")
         if tag == "h1":
             self.h1_count += 1
+        if tag == "a" and attrs.get("target") == "_blank":
+            assert {"noopener", "noreferrer"} <= set(attrs.get("rel", "").split()), "Unsafe external tab link"
 
 
 def main():
