@@ -71,7 +71,7 @@ test("filters and project details work from the keyboard", async ({ page }) => {
   await page.keyboard.press("Enter");
   await expect(details).toHaveAttribute("open", "");
   await expect(details.locator("p")).toBeVisible();
-  // Every real link is reachable by native Tab navigation; unavailable contacts are plain text.
+  // Every real link is reachable by native Tab navigation.
   const reached = new Set();
   await page.goto("/");
   for (let i = 0; i < 60; i++) {
@@ -91,6 +91,7 @@ test("content survives without JavaScript and respects reduced motion", async ({
   await expect(page.locator(".project-filters")).toBeHidden();
   const style = await page.locator("html").evaluate((element) => getComputedStyle(element).scrollBehavior);
   expect(style).toBe("auto");
-  await expect(page.locator(".contact-placeholder")).toHaveCount(2);
+  await expect(page.getByRole("link", { name: "Email me" })).toHaveAttribute("href", "mailto:davorin.milicevic@gmail.com");
+  await expect(page.getByRole("link", { name: "Connect on LinkedIn" })).toHaveAttribute("href", "https://www.linkedin.com/in/davorin-milicevic-323ba123b/");
   await context.close();
 });

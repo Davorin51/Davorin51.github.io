@@ -31,7 +31,7 @@ In **Settings → Pages**, choose **Deploy from a branch**, branch **main**, fol
 - Set colors, spacing and breakpoints in `styles.css`.
 - Project categories and filters use `data-category` and `data-filter`; all projects remain visible when JavaScript is disabled.
 - `script.js` adds filters and the current footer year. Project detail disclosures use native HTML and do not require JavaScript.
-- Contact currently includes the verified GitHub profile plus non-interactive email and LinkedIn placeholders. Replace those rows with a `mailto:` link and the exact LinkedIn URL after the owner supplies public details. Do not publish the comment placeholders as working links.
+- Contact uses the owner-provided email `davorin.milicevic@gmail.com`, LinkedIn profile https://www.linkedin.com/in/davorin-milicevic-323ba123b/ and GitHub profile. LinkedIn opens with `noopener noreferrer`; sharing parameters are omitted.
 - Replace the dashboard image in `assets/` if the report design changes. The included image comes from the public Python Automation Toolkit example and uses synthetic data.
 - If changing the domain, update the canonical URL, Open Graph metadata, `robots.txt` and `sitemap.xml`.
 

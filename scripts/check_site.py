@@ -55,7 +55,9 @@ def main():
     for reference in parser.references:
         url = urlsplit(reference)
         if url.scheme or url.netloc:
-            assert url.scheme == "https", f"Expected HTTPS: {reference}"
+            assert url.scheme in {"https", "mailto"}, f"Unexpected link scheme: {reference}"
+            if url.scheme == "mailto":
+                assert url.path == "davorin.milicevic@gmail.com", "Unexpected contact address"
             if reference == parser.meta.get("og:image"):
                 assert (root / unquote(url.path.lstrip("/"))).is_file()
             continue
